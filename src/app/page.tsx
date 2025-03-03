@@ -90,8 +90,7 @@ export default function Page(){
         }),
       });
 
-      const data = await response.json();
-
+      // if user submits the same username return a 409 error and an error message otherwise display the other possible errors
       if (!response.ok) {
         if (response.status === 409) {
           setError('Username already exists. Please choose a different username.');
